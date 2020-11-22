@@ -1,5 +1,6 @@
 # general
 from datetime import datetime
+import sys
 
 # scrape
 from bs4 import BeautifulSoup
@@ -13,7 +14,6 @@ import sec_common as sc
 def get_filings(cik, type, dateb = None, filing_limit = None):
     """
     get list of filings matching the provided criteria
-
 
     Parameters
     ----------
@@ -83,7 +83,11 @@ if __name__ == "__main__":
     # testing
     # I just wanted to demonstrate how to use these funcs
 
-    cik = '0000051143'
+    if len(sys.argv) > 1:
+        cik = sys.argv[1]
+    else:
+        cik = '0000051143'
+    
     cik = cik.zfill(10)  # 10 digit
     type = '10-K'
 

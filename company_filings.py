@@ -3,6 +3,7 @@ from datetime import datetime
 from pathlib import Path
 import pandas as pd
 import os
+import sys
 
 # sec
 import sec_common as sc
@@ -19,8 +20,11 @@ if __name__ == "__main__":
     # I just wanted to demonstrate how to use these funcs
 
     # company info
-    # TODO: specify with command line args
-    ls_cik = ["0001018724", "0001652044", "0000789019"]
+    if len(sys.argv) > 1:
+        ls_cik = sys.argv[1:]
+    else:
+        ls_cik = ["0001018724", "0001652044", "0000789019"]
+
     # AMZN = 0001018724
     # GOOG = 0001652044
     # MSFT = 0000789019

@@ -1,3 +1,6 @@
+# general
+import sys
+
 # scrape
 from bs4 import BeautifulSoup
 import requests
@@ -77,21 +80,13 @@ def get_tag_info_ls(xbrl_str, str_startswith = "us-gaap:"):
 
 if __name__ == "__main__":
 
-    # testing
-    # I just wanted to demonstrate how to use these funcs
-
-    # specify dict_filing
-    # for this test, only Filing Link is really necessary
-    dict_filing = {
-        'CIK': '0000051143',
-        'Filing': '10-K',
-        'Filing Date': '2020-02-25',
-        'Filing Link': 'https://www.sec.gov/Archives/edgar/data/51143/000155837020001334/0001558370-20-001334-index.htm',
-        'Search Results': 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000051143&type=10-K&dateb=20201116'
-        }
+    if len(sys.argv) > 1:
+        doc_link = sys.argv[1]
+    else:
+        doc_link = 'https://www.sec.gov/Archives/edgar/data/51143/000155837020001334/0001558370-20-001334-index.htm'
 
     # get xbrl
-    doc_link = dict_filing['Filing Link'] # get link to filing
+    # doc_link = dict_filing['Filing Link'] # get link to filing
     xbrl_link = get_xml_link(doc_link) # get xml link
     xbrl_str = get_xbrl_text(xbrl_link) # get text of xml link
 

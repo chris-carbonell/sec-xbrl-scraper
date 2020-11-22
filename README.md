@@ -19,11 +19,19 @@
 
 # Example
 
-See `./output/example/` for the example output. The output there combines data from AMZN, GOOG, and MSFT as of 11/20/20.
+1. Create CSV of all filings with the given CIK:
+`python filing_links.py 0000051143`
 
-You'll see that each company can use their own contexts - lookup field that identifies the as of date (e.g., 2019). Therefore, `get_data.ipynb` provides an example of how to scrub the resulting data into a more digestible format. The result is `df_final.xlsx`.
+2. Create CSV of all tags starting with `us-gaap:` and `dei:` from a given filing:
+`python filing_data.py https://www.sec.gov/Archives/edgar/data/51143/000155837020001334/0001558370-20-001334-index.htm`
 
-From there, you can read the data in Excel and play around with it as you please!
+3. Create CSV of all tags starting with `us-gaap:` and `dei:` for a given list of CIKs:
+`python company_filngs.py 0001018724 0001652044 0000789019`
+
+Notes:
+* See `./output/example/` for the example output. The output there combines data from AMZN, GOOG, and MSFT as of 11/20/20.
+* You'll see that each company can use their own contexts - lookup field that identifies the as of date (e.g., 2019). Therefore, `get_data.ipynb` provides an example of how to scrub the resulting data into a more digestible format. The result is `df_final.xlsx`.
+* From there, you can read the data in Excel and play around with it as you please!
 
 # References
 
