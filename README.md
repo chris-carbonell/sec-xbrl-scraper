@@ -19,13 +19,13 @@
 
 # Example
 
-1. Create CSV of all filings with the given CIK:
+1. Create CSV of all filings with the given CIK:<br>
 `python filing_links.py 0000051143`
 
-2. Create CSV of all tags starting with `us-gaap:` and `dei:` from a given filing:
+2. Create CSV of all tags starting with `us-gaap:` and `dei:` from a given filing:<br>
 `python filing_data.py https://www.sec.gov/Archives/edgar/data/51143/000155837020001334/0001558370-20-001334-index.htm`
 
-3. Create CSV of all tags starting with `us-gaap:` and `dei:` for a given list of CIKs:
+3. Create CSV of all tags starting with `us-gaap:` and `dei:` for a given list of CIKs:<br>
 `python company_filngs.py 0001018724 0001652044 0000789019`
 
 Notes:
